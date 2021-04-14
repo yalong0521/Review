@@ -19,7 +19,7 @@ import com.larkin.review.R
  *      使用场景：Android4.1之后增加了Choreographer机制，用于同 Vsync 机制配合，统一动画、输入和绘制时机。
  *      在ViewRootImpl的requestLayout()->scheduleTraversals()中可以找到答案
  */
-class HandlerActivity : AppCompatActivity(R.layout.activity_main), NoLeakHandler.HandlerFunc {
+class HandlerActivity : AppCompatActivity(R.layout.activity_handler), NoLeakHandler.HandlerFunc {
     companion object {
         private const val TAG = "MainActivity"
     }
