@@ -1,5 +1,6 @@
-package com.larkin.review.main
+package com.larkin.review
 
+import android.app.Activity
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -10,11 +11,9 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.larkin.review.R
 import com.larkin.review.databinding.ActivityMainBinding
 import com.larkin.review.databinding.ItemPointBinding
 import com.larkin.review.handler.HandlerActivity
-import com.larkin.review.main.entity.PointEntity
 
 class MainActivity : AppCompatActivity() {
     val mPointNames: ArrayList<PointEntity> = arrayListOf<PointEntity>().apply {
@@ -28,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         add(PointEntity("OkHttp", null))
         add(PointEntity("Render", null))
         add(PointEntity("ThreadPool", null))
+        add(PointEntity("Performance", null))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,4 +76,6 @@ class MainActivity : AppCompatActivity() {
             return mPointNames.size
         }
     }
+
+    data class PointEntity(val name: String, val cls: Class<out Activity>?)
 }

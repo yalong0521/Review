@@ -5,7 +5,7 @@
 
         <variable
             name="pointAdapter"
-            type="com.larkin.review.main.MainActivity.PointAdapter" />
+            type="com.larkin.review.MainActivity.PointAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,10 +16,10 @@
         tools:context=".handler.HandlerActivity">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:background="@color/black"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adapter="@{pointAdapter}"
+            android:background="@color/black"
             android:padding="10dp"
             app:layoutManager="GridLayoutManager"
             app:spanCount="2"
