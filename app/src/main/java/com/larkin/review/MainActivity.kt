@@ -2,15 +2,14 @@ package com.larkin.review
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.larkin.review.camerax.CameraXActivity
 import com.larkin.review.databinding.ActivityMainBinding
 import com.larkin.review.databinding.ItemPointBinding
 import com.larkin.review.handler.HandlerActivity
@@ -28,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         add(PointEntity("Render", null))
         add(PointEntity("ThreadPool", null))
         add(PointEntity("Performance", null))
+        add(PointEntity("CameraX", CameraXActivity::class.java))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,9 +35,6 @@ class MainActivity : AppCompatActivity() {
         val binding: ActivityMainBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.pointAdapter = PointAdapter()
-        val typedValue = TypedValue()
-        theme.resolveAttribute(R.attr.colorPrimaryVariant, typedValue, true)
-        supportActionBar?.setBackgroundDrawable(ColorDrawable(typedValue.data))
     }
 
     inner class PointAdapter : RecyclerView.Adapter<PointAdapter.PointVH>() {
